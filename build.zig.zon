@@ -1,10 +1,11 @@
 .{
-    .name = "mbedtls",
+    .name = .mbedtls,
+    .fingerprint = 0x841b00c247548313,
     .version = "3.6.2",
     .dependencies = .{
         .mbedtls = .{
             .url = "https://github.com/Mbed-TLS/mbedtls/archive/refs/tags/mbedtls-3.6.2.tar.gz",
-            .hash = "1220df23c1e89d301f43026518f90e75cbfd91d92f9e62e5243268eec1db1b425db1",
+            .hash = "N-V-__8AAPnFhALfI8HonTAfQwJlGPkOdcv9kdkvnmLlJDJo",
         },
     },
     .paths = .{

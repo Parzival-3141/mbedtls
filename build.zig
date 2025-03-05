@@ -7,11 +7,14 @@ pub fn build(b: *Build) void {
 
     const mbedtls_dep = b.dependency("mbedtls", .{});
 
-    const mbedtls = b.addStaticLibrary(.{
+    const mbedtls = b.addLibrary(.{
         .name = "mbedtls",
-        .target = target,
-        .optimize = optimize,
-        .link_libc = true,
+        .linkage = .static,
+        .root_module = b.createModule(.{
+            .target = target,
+            .optimize = optimize,
+            .link_libc = true,
+        }),
     });
     mbedtls.root_module.addIncludePath(mbedtls_dep.path("include"));
     mbedtls.root_module.addCSourceFiles(.{
